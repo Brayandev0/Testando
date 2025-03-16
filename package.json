@@ -16,8 +16,10 @@
     "nodemon": "^3.1.9"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
     "ejs": "^3.1.10",
     "mysql": "^2.18.1",
+    "nodemailer": "^6.10.0",
     "path": "^0.12.7"
   }
 }
