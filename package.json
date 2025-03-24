@@ -2,7 +2,7 @@
   "name": "codigos-js",
   "version": "1.0.0",
   "description": "",
-  "main": "mps.js",
+  "main": "src/mps.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,10 +16,14 @@
     "nodemon": "^3.1.9"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dayjs": "^1.11.13",
     "ejs": "^3.1.10",
     "mysql": "^2.18.1",
     "nodemailer": "^6.10.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "worker-threads": "^1.0.0"
   }
 }

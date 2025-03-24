@@ -1,0 +1,12 @@
+ 
+ Data : 2025-03-22 20:39:36 |  Error: No recipients defined 
+ Data : 2025-03-22 20:54:27 |  Error: 80D8268DCC750000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:354:
+ 
+ Data : 2025-03-22 21:08:25 |  Error: Greeting never received 
+ Data : 2025-03-22 21:08:38 |  Error: Invalid login: 535 5.7.8 Error: authentication failed:  
+ Data : 2025-03-22 21:09:56 |  Error: Invalid login: 535 5.7.8 Error: authentication failed:  
+ Data : 2025-03-22 21:10:55 |  Error: Invalid login: 535 5.7.8 Error: authentication failed:  
+ Data : 2025-03-22 21:44:46 |  Error: Invalid login: 535 5.7.8 Error: authentication failed:  
+ Data : 2025-03-22 22:39:50 |  Error: Mail command failed: 553 5.7.1 <contato@createc.com.br>: Sender address rejected: not owned by user suporte@createc.com.br 
+ Data : 2025-03-22 22:47:56 |  Error: Mail command failed: 553 5.7.1 <contato@createc.com.br>: Sender address rejected: not owned by user suporte@createc.com.br 
+ Data : 2025-03-22 22:56:19 |  Error: Message failed: 550 5.7.1 Message Rejected: Invalid From address. Mail is not following RFC 5322. 'From' header does not exist

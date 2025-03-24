@@ -1,4 +1,5 @@
-import app from "./mps.js";
+import app from "./src/mps.js"; // Assumindo que o arquivo mps.js está na pasta src
+
 
 const PORT = 8080;
 
