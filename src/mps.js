@@ -1,7 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
 import { conectandoSmtp } from "./Enviar_email.js";
-import { read, Insert, Verificar } from './database/crud.js'; // Caminho correto considerando a estrutura
+import { read, Insert, Verificar, Checar_key } from './database/crud.js'; // Caminho correto considerando a estrutura
 import { templateAlerta, templateBemVindo } from "./templates_email/templates_email.js";
 const app = express();
 
@@ -69,6 +69,19 @@ app.post("/", async(request, response ) => {
 
 app.post("/promocao", async(request, response ) => {
     let dados = request.body()
+    let verificacao = Checar_key(dados["key"])
+
+    if(verificacao != undefined){
+        return response.status(403).send({Error:403,Message:"Chave API Invalida"})
+    }
+
+    if(dados["titulo"].length > 30 || dados["titulo"].length < 1){
+        return response.status(403).send({Error:403,Message:"Chave API Invalida"})
+
+    }
+
+    enviarPromocao()
+
     
   console.log("aaa")  
 })
