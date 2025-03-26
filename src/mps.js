@@ -3,6 +3,7 @@ import cors from "cors";
 import { conectandoSmtp } from "./Enviar_email.js";
 import { read, Insert, Verificar, Checar_key } from './database/crud.js'; // Caminho correto considerando a estrutura
 import { templateAlerta, templateBemVindo } from "./templates_email/templates_email.js";
+import { enviarPromocao } from "./orcamento.js";
 const app = express();
 
 // Configuração mais robusta do CORS
@@ -57,7 +58,7 @@ app.post("/", async(request, response ) => {
     try {
         console.log(data["nome"])
         conectandoSmtp("Createc contato@createc.com.br",data["email"],"Solicitação de Orçamento ",await templateBemVindo(data["nome"]))
-        conectandoSmtp(" Solicitação de Orçamento contato@createc.com.br","suporte@createc.com.br","Solicitação de Orçamento ", await templateAlerta(data["nome"],data["telefone"],data["email"],data["texto"]))
+        conectandoSmtp(" Solicitação de Orçamento contato@createc.com.br","suporte@createc.com.br","Solicitação de Orçamento ", await templateAlerta(data["nome"],data["telefone"],data["email"],data["texto"]),"gmail")
 
         return response.status(200).send({Success:"Email recebido com sucesso"})
         
@@ -68,10 +69,11 @@ app.post("/", async(request, response ) => {
 })
 
 app.post("/promocao", async(request, response ) => {
-    let dados = request.body()
-    let verificacao = Checar_key(dados["key"])
+    let dados = request.body
+    let verificacao = await Checar_key(dados["key"])
 
-    if(verificacao != undefined){
+    if(verificacao == undefined){
+        console.log(verificacao)
         return response.status(403).send({Error:403,Message:"Chave API Invalida"})
     }
 
@@ -80,7 +82,9 @@ app.post("/promocao", async(request, response ) => {
 
     }
 
-    enviarPromocao()
+    if(await enviarPromocao("wecwedwe")){
+        response.send("23232323232323")
+    }
 
     
   console.log("aaa")  

@@ -9,4 +9,17 @@
  Data : 2025-03-22 21:44:46 |  Error: Invalid login: 535 5.7.8 Error: authentication failed:  
  Data : 2025-03-22 22:39:50 |  Error: Mail command failed: 553 5.7.1 <contato@createc.com.br>: Sender address rejected: not owned by user suporte@createc.com.br 
  Data : 2025-03-22 22:47:56 |  Error: Mail command failed: 553 5.7.1 <contato@createc.com.br>: Sender address rejected: not owned by user suporte@createc.com.br 
- Data : 2025-03-22 22:56:19 |  Error: Message failed: 550 5.7.1 Message Rejected: Invalid From address. Mail is not following RFC 5322. 'From' header does not exist
+ Data : 2025-03-22 22:56:19 |  Error: Message failed: 550 5.7.1 Message Rejected: Invalid From address. Mail is not following RFC 5322. 'From' header does not exist 
+ Data : 2025-03-25 19:07:40 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:07:40 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:07:40 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:08:26 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:08:26 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:08:26 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:10:08 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:10:08 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:10:08 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:10:39 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:10:39 |  TypeError: tt is not a function 
+ Data : 2025-03-25 19:10:39 |  TypeError: tt is not a function 
+ Data : 2025-03-26 11:49:02 |  Error: Connection timeout

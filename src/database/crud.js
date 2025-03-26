@@ -6,7 +6,7 @@ export async function Insert(nome,email,numero) {
     
 }
 export async function read(){
-    await Database().then(db => db.all("SELECT * FROM Usuarios")).then(a => console.log(a[0]["nome"]))
+    return await Database().then(db => db.all("SELECT * FROM Usuarios"))
 }
 
 export async function Verificar(email) {                                           
@@ -14,6 +14,6 @@ export async function Verificar(email) {
     
 }
 export async function Checar_key(chave){
-    return await Database().then(db => db.get("SELECT chave INTO Keys WHERE key = ?",[chave]))
+    return await Database().then(db => db.get("SELECT * FROM Keys WHERE chave = ?",[chave]))
 }
     
