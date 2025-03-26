@@ -82,12 +82,13 @@ app.post("/promocao", async(request, response ) => {
 
     }
 
-    if(await enviarPromocao("wecwedwe")){
-        response.send("23232323232323")
+    if(await enviarPromocao(data["nome"] + ", temos algo especial para você! ","22/05/2025","CREATEC5")){
+        return response.status(200).send({Success:200,Message:"Promocao Enviada com sucesso"})
     }
+    return response.status(500).send({Error:500,Message:"Ocorreu um erro no servidor"})
 
-    
-  console.log("aaa")  
+
+
 })
 
 
