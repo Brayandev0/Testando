@@ -114,7 +114,7 @@ app.post("/:plano", async (request,response) => {
     }
         console.log(data["nome"])
         conectandoSmtp("Createc contato@createc.com.br",data["email"],"Solicitação de Orçamento ",await templateBemVindo(data["nome"]))
-        conectandoSmtp(" Solicitação de Orçamento contato@createc.com.br","suporte@createc.com.br","Solicitação de Orçamento ", await templatePlano(data["nome"],planos,data["telefone"],data["texto"]),"gmail")
+        conectandoSmtp(" Solicitação de Orçamento contato@createc.com.br","suporte@createc.com.br","Solicitação de Orçamento ", await templatePlano(data["nome"],planos,data["telefone"],data["texto"],data["email"]),"gmail")
 
         return response.status(200).send({Success:"Email recebido com sucesso"})
         
@@ -143,16 +143,13 @@ app.post("/promocao", async(request, response ) => {
         return response.status(403).send({Error:403,Message:"Chave API Invalida"})
 
     }
-    enviarPromocao("fg")
-     return response.status(200).send({Success:200,Message:"Promocao Enviada com sucesso"})
-    }catch (error) {
-        return response.status(500).send({Error:"Erro no servidor"})
-            
+
+    if(await enviarPromocao(data["nome"] + ", temos algo especial para você! ","22/05/2025","CREATEC5")){
+        return response.status(200).send({Success:200,Message:"Promocao Enviada com sucesso"})
     }
-    
+    }catch{
+        return response.status(500).send({Error:500,Message:"Ocorreu um erro no servidor"}) }})
 
-
-})
 
 
 
