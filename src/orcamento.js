@@ -3,16 +3,22 @@ import { templatePromocao } from "./templates_email/templates_email.js";
 import nodemailer from "nodemailer";
 import fs from "fs"
 import date from "dayjs";
+import { setInterval } from "timers/promises";
 
 
 export async function enviarPromocao(assunto){
         var smtp = criandoTransporter();
 
-        let emails = await read()      
-        emails.forEach(data => {
-                console.log(data.email)
-                conectandoSmtp(smtp,"Createc contato@createc.com.br",data.email,`${data.nome}, temos algo especial para você!`,templatePromocao(data.nome,"22/5/2025","CREATEC5"))
-        })
+        let emails = await read()   
+        emails.forEach((data,index) => {
+            setTimeout(() => {
+                console.log(data.email);
+            conectandoSmtp(smtp,"Createc contato@createc.com.br",data.email,`${data.nome}, temos algo especial para você!`,templatePromocao(data.nome,"22/5/2025","CREATEC5"))
+
+            }, index * 3000); // Delay aumenta progressivamente
+        });
+        
+
         smtp.close()
         return true
         
