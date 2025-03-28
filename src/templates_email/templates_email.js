@@ -382,7 +382,7 @@ export function templatePromocao(nome,data,codigo){
 </body>
 </html>`
 }
-export function templatePlano(nome, plano,numero,mensagem){
+export function templatePlano(nome, plano,numero,mensagem,email){
     return `<div style="max-width: 600px; margin: 20px auto; font-family: Arial, sans-serif; color: #333;">
     <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
         <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 25px;">
@@ -408,7 +408,7 @@ export function templatePlano(nome, plano,numero,mensagem){
             </div>
             <div style="margin-bottom: 12px;">
                 <span style="display: inline-block; width: 80px; font-weight: bold; color: #7f8c8d;">Email:</span>
-                <span style="color: #2c3e50;">${nome}</span>
+                <span style="color: #2c3e50;">${email}</span>
             </div>
         </div>
 
